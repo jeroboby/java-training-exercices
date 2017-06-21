@@ -10,9 +10,13 @@ public class DeckGenerator implements IDeckGenerator {
 	public Deck generate() {
 		Deck deck = new Deck();
 
-		// fill the deck with cards
-        // Probably use the good modulo
+		
 		for (int i = 1; i <= 52; i++) {
+			int value = i/4;
+			CardColor c = CardColor.getByValue(i%4 +1);
+			Card card = new Card(value,c);
+			deck.add(card);
+			
 
 		}
 		return deck;

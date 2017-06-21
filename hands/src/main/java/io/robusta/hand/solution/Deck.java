@@ -20,9 +20,10 @@ public class Deck extends LinkedList<Card> implements IDeck{
 	
 	@Override
 	public Card pick() {
-		// shuffle;
-		// remove card from deck and returns it
-		return null;
+		Collections.shuffle(this);
+		Random randomcard = new Random();
+		
+		return this.removeFirst();
 	}
 
 
@@ -30,14 +31,20 @@ public class Deck extends LinkedList<Card> implements IDeck{
 
 	@Override
 	public TreeSet<Card> pick(int number) {
-		// reuse pick()
-		return null;
+		TreeSet<Card> treeSet = new TreeSet<>(); 
+		for(int i = 1; i <= number; i++){
+			
+			treeSet.add(pick());
+			
+		}
+		return treeSet;
 	}
 
 	@Override
 	public Hand giveHand() {
-		// A hand is a **5** card TreeSet
-		return null;
+		Hand hand = new Hand();
+		hand.addAll(pick(5));
+		return hand;
 	}
 	
 	

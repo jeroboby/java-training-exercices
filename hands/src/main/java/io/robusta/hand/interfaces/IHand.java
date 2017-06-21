@@ -7,6 +7,8 @@ import io.robusta.hand.Card;
 
 public interface IHand extends SortedSet<Card>, IHandResolver{
 	
+	
+	
 	/**
 	 * Remove some cards, and add some new ones.
 	 * The new ones are also returned  
