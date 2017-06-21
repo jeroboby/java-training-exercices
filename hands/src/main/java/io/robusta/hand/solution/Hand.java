@@ -65,6 +65,7 @@ public class Hand extends TreeSet<Card> implements IHand {
 			previous = current;
 			
 		}
+		return false;
 	}
 
 	@Override
